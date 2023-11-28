@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p id="primoP">Primo paragrafo</p>
+    <p id="secondoP">Secondo paragrafo</p>
+    <p id="terzoP">Terzo paragrafo</p>
+    <button id="primoBtn" onclick="cambiaColori()">Primo Bottone</button>
+    <button id="secondoBtn" onclick="mettiGrassetto()">Secondo Bottone</button>
+    <button id="terzoBtn" onclick="toggleP()">Terzo Bottone</button>
+    <script>
+
+        var acceso = true
+        let p1 = document.getElementById("primoP")
+        function randomColor() {
+            var hex = '0123456789ABC'.split('');
+            var color = '#';
+            for (i = 0; i < 6; i++) {
+                color = color + hex[Math.floor(Math.random() * 13)];
+            }
+            return color;
+        }
+        function cambiaColori() {
+            document.getElementById("primoP").style.color = randomColor();
+            document.getElementById("secondoP").style.color = randomColor();
+            document.getElementById("terzoP").style.color = randomColor();
+        }
+
+
+        function mettiGrassetto() {
+            document.getElementById("primoP").style.fontWeight = "bold"
+            document.getElementById("secondoP").style.fontWeight = "bold"
+            document.getElementById("terzoP").style.fontWeight = "bold"
+        }
+
+        function toggleP() {
+            console.log("mi hai chiamato")
+            if (acceso == true) {
+                acceso = false;
+                document.getElementById("primoP").style.display = "none"
+                document.getElementById("secondoP").style.display = "none"
+                document.getElementById("terzoP").style.display = "none"
+            }
+            else {
+                acceso=true
+                document.getElementById("primoP").style.display = "block"
+                document.getElementById("secondoP").style.display = "block"
+                document.getElementById("terzoP").style.display = "block"
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
