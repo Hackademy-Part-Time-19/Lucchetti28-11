@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .principale {
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+
+
+        .card {
+            background-color: lightgreen;
+            border: 1px solid green;
+            height: 250px;
+            width: 400px;
+            border-radius: 25px;
+            margin-right: 15px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="principale" style="display: flex; ">
+        <h4> Titolo:</h4>
+        <input id="insertTitle" onclick="" placeholder="Titolo" style="width: 150px; height: 30px;">
+        <h4>Paragrafo:</h4>
+        <input id="insertText" onclick="" placeholder="Descrizione" style="width: 150px; height: 30px;">
+        <button onclick="inserisciCards()" style="width: 150px; height: 35px; margin-left: 25px;">Crea Articolo</button>
+    </div>
+
+    <div style="display: flex;" id="innerCards">
+
+
+
+    </div>
+
+
+    <script>
+
+        function inserisciCards() {
+            let titolo;
+            let testo;
+            document.getElementById("innerCards").innerHTML += `
+        <div class="card" >
+
+            <h2 id="title">
+
+            </h2>
+
+            <p id="text-article">
+
+            </p>
+
+            <p id="date">
+
+            </p>
+        </div>
+            
+
+        `;
+            console.log("ciao mi hai chiamato inizio")
+            titolo = document.getElementById("insertTitle").value
+            testo = document.getElementById("insertText").value
+
+
+            document.getElementById("title").innerHTML = titolo
+
+            document.getElementById("text-article").innerHTML = testo
+            console.log("ciao mi hai chiamato fine")
+
+        }
+
+
+    </script>
+</body>
+
+</html>
