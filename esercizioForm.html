@@ -46,10 +46,13 @@
         function inserisciCards() {
             let titolo;
             let testo;
+            let date=  new Date
+            
+        
             document.getElementById("innerCards").innerHTML += `
-        <div class="card" >
+        <div class="card" style="padding-left:20px; " >
 
-            <h2 id="title">
+            <h2 id="title" style="">
 
             </h2>
 
@@ -64,16 +67,17 @@
             
 
         `;
-            console.log("ciao mi hai chiamato inizio")
-            titolo = document.getElementById("insertTitle").value
-            testo = document.getElementById("insertText").value
+            console.log("ciao mi hai chiamato inizio");
+            titolo = document.getElementById("insertTitle").value;
+            testo = document.getElementById("insertText").value;
+            
+            document.getElementById("title").innerHTML = titolo;
+            document.getElementById("date").innerHTML= date
+            document.getElementById("text-article").innerHTML = testo;
+            console.log("ciao mi hai chiamato fine");
 
-
-            document.getElementById("title").innerHTML = titolo
-
-            document.getElementById("text-article").innerHTML = testo
-            console.log("ciao mi hai chiamato fine")
-
+            document.getElementById("insertTitle").value=""
+            document.getElementById("insertText").value=""
         }
 
 
